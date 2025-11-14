@@ -116,7 +116,7 @@ runs:
 
     - name: Cache Flutter
       id: cache-flutter
-      uses: act
+      uses: cloudops-one/cloudops-ci-cache@v4
       if: ${{ inputs.cache == 'true' }}
       with:
         path: ${{ steps.flutter-action.outputs.CACHE-PATH }}
