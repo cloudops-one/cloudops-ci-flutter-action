@@ -6,13 +6,9 @@ branding:
   color: blue
 
 inputs:
-  channel:
-    description: The Flutter build release channel
-    required: false
-    default: stable
   flutter-version:
     description: The Flutter version to make available on the path
-    required: false
+    required: true
     default: ""
   flutter-version-file:
     description: The pubspec.yaml file with exact Flutter version defined
@@ -111,8 +107,7 @@ runs:
           -c '${{ inputs.cache-path }}' \
           -l '${{ inputs.pub-cache-key }}' \
           -d '${{ inputs.pub-cache-path }}' \
-          -g '${{ inputs.git-source }}' \
-          ${{ inputs.channel }}
+          -g '${{ inputs.git-source }}' 
 
     - name: Cache Flutter
       id: cache-flutter
